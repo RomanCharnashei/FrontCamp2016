@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700italic);
+body { 
+    font-family: 'Lato', sans-serif;
+}
+.news-item{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #e1fafe;
+}
+.news-item__title {
+    letter-spacing: 1px; 
+}
+.news-item__img {
+    float: left;
+    margin-right: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.news-item__content {
+    overflow: hidden;
+}
+
+.news-item__date {
+    margin-right: 10px;
+}
