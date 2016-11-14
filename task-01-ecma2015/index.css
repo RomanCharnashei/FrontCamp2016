@@ -3,8 +3,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 .news-item{
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    box-shadow: 1px 1px 21px -11px #008499 inset, 1px 1px 36px -21px #000000;
     margin-bottom: 25px;
     padding: 10px;
     background-color: #e1fafe;
