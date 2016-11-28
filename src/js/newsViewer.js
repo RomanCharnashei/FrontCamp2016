@@ -1,24 +1,6 @@
-class NewsService {
-    constructor(apiKey) {
-        this._apiKey = apiKey;
-    }
+'use strict';
 
-    getNews(src='techcrunch') { 
-        return fetch(`https://newsapi.org/v1/articles?source=${src}&apiKey=${this._apiKey}`)
-            .then(res => {
-                if (res.status >= 200 && res.status < 300) {
-                    return res;
-                } else {
-                    var error = new Error(res.statusText);
-                    error.response = res;
-                    throw error;
-                }
-            })
-            .then(res => res.json());
-    }
-}
-
-class NewsViewer {
+module.exports = class NewsViewer {
     constructor(newsSvc, container) {
         this._newsSvc = newsSvc;
         this._container = container;
@@ -56,8 +38,4 @@ class NewsViewer {
             .then(this._view.bind(this))
             .catch(error => { console.log('request failed', error); });
     }
-}
-
-new NewsViewer( 
-    new NewsService('2ed7c580e4884a50a6e7d0256ef9e8ce'),
-    document.querySelector('.container')).view();
+};

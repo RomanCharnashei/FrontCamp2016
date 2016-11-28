@@ -1,0 +1,31 @@
+{
+  "name": "front-camp-2016",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "build": "webpack",
+    "start": "static ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanCharnashei/FrontCamp2016.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomanCharnashei/FrontCamp2016/issues"
+  },
+  "homepage": "https://github.com/RomanCharnashei/FrontCamp2016#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "node-static": "^0.7.9",
+    "webpack": "^1.13.3"
+  },
+  "dependencies": {
+    "whatwg-fetch": "^2.0.1"
+  }
+}
