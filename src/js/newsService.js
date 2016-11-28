@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = class NewsService {
+export default class NewsService {
     constructor(apiKey) {
         this._apiKey = apiKey;
     }

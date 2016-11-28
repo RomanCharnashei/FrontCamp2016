@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = class NewsViewer {
+export default class NewsViewer {
     constructor(newsSvc, container) {
         this._newsSvc = newsSvc;
         this._container = container;
