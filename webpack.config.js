@@ -36,7 +36,15 @@ function ie() {
             }, {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+            }, {
+                test: /\.json$/,
+                loader: __dirname + '/webpack_loaders/jsonNumberRemove'
             }]
+        },
+
+        devServer: {
+            host: 'localhost',
+            port: 8181
         }
     };
 

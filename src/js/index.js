@@ -1,6 +1,7 @@
 'use strict';
 
 import '../css/index.css';
+import './test.json';
 import NewsViewer from './newsViewer';
 import NewsService from './newsService';
 
