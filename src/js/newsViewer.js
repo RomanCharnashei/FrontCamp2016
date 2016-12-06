@@ -7,10 +7,6 @@ export default class NewsViewer {
         this._news = null;
     }
 
-    get news() {
-        return this._news;
-    }
-
     _init(res) {
         this._news = res.articles;
     }
@@ -32,8 +28,8 @@ export default class NewsViewer {
         this._container.innerHTML = elements.join('');
     }
 
-    view() {
-        this._newsSvc.getNews()
+    view(src) {
+        this._newsSvc.getNews(src)
             .then(this._init.bind(this))
             .then(this._view.bind(this))
             .catch(error => { console.log('request failed', error); });
