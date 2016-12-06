@@ -20,7 +20,7 @@ body {
 
 .header__category-label, .header__language-label, .header__country-label {
     display: inline-block;
-    margin: 0 10px 5px 0;
+    margin: 0 10px 3px 0;
 }
 
 .header_sources {
