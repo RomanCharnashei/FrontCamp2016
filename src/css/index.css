@@ -10,6 +10,11 @@ body {
     background-color: #5C4387;
     box-shadow: 1px 1px 36px -21px #000000;
     padding: 0 5px 8px 5px;
+    box-sizing: border-box;
+}
+
+.container {
+    box-sizing: border-box;
 }
 
 .header legend {
