@@ -7,10 +7,6 @@ export default class NewsViewer {
         this._news = null;
     }
 
-    get news() {
-        return this._news;
-    }
-
     _init(res) {
         this._news = res.articles;
     }
@@ -20,8 +16,11 @@ export default class NewsViewer {
         for (let item of this._news) {
             let innerHTML = 
             `<div class="news-item">` +
-                `<h2 class=\"news-item__title\">${item.title}</h2>` +
-                `<p class=\"news-item__content\"><img class=\"news-item__img\" src=\"${item.urlToImage}\"/>${item.description}</p>` +
+                `<div class=\"news-item__content\">` + 
+                    `<img class=\"news-item__img\" src=\"${item.urlToImage}\"/>` +
+                    `<h2 class=\"news-item__title\">${item.title}</h2>` +                                 
+                    `${item.description}` +
+                `</div>` +
                 `<div class=\"news-item__bottom\">` +
                     `<span class=\"news-item__date\">${new Date(item.publishedAt).toLocaleString()}</span>` +
                     `<a class=\"news-item__src\" href=\"${item.url}\">${item.author}</a>` +
@@ -32,8 +31,8 @@ export default class NewsViewer {
         this._container.innerHTML = elements.join('');
     }
 
-    view() {
-        this._newsSvc.getNews()
+    view(src) {
+        this._newsSvc.getNews(src)
             .then(this._init.bind(this))
             .then(this._view.bind(this))
             .catch(error => { console.log('request failed', error); });

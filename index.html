@@ -4,10 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <title>FrontCamp2016</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="./dist/bundle.css">
 </head>
 
 <body>
+    <header class="header">
+        <fieldset class="header_sources">
+            <legend>Pick source</legend>
+            <select class="header__source-select" id="source">
+                <option value="">test__</option>
+                <option value="">test__</option>
+                <option value="">test__</option>
+            </select>
+        </fieldset>
+        <fieldset class="header_filter">
+            <legend>Filter sources</legend>
+            <p class="element">
+                <label class="header__category-label" for="category">Category:</label>
+                <select class="header__category" id="category">
+                    <option value="business">Business</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="general">General</option>
+                    <option value="music">Music</option>
+                    <option value="science-and-nature">Science and nature</option>
+                    <option value="sport">Sport</option>
+                    <option value="technology">Technology</option>
+                </select>
+            </p> 
+            <p class="element">       
+                <label class="header__language-label" for="language">Language:</label>
+                <select class="header__language" id="language">
+                    <option value="en">English</option>
+                    <option value="de">German</option>
+                    <option value="fr">French</option>
+                </select>
+            </p>
+            <p class="element">  
+                <label for="header__country-label">Country source:</label>
+                <select class="header__country" id="country">
+                    <option value="au">Australia</option>
+                    <option value="de">German</option>
+                    <option value="gb">Great Britain</option>
+                    <option value="in">India</option>
+                    <option value="it">Italy</option>
+                    <option value="us">United States</option>
+                </select>
+            </p>    
+        </fieldset>
+    </header>
     <div class="container"></div>
     <script src="./dist/bundle.js"></script>
 </body>
