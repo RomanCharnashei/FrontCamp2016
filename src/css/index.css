@@ -3,6 +3,13 @@ body {
     background-color: #372D48;
 }
 
+.header__source-select, 
+.header__category, 
+.header__language, 
+.header__country {
+    width: 135px;
+} 
+
 .header {
     margin-bottom: 25px;
     color: white;
@@ -10,11 +17,6 @@ body {
     background-color: #5C4387;
     box-shadow: 1px 1px 36px -21px #000000;
     padding: 0 5px 8px 5px;
-    box-sizing: border-box;
-}
-
-.container {
-    box-sizing: border-box;
 }
 
 .header legend {
@@ -24,7 +26,7 @@ body {
 
 .header_sources {
     float: left;
-    width: 200px;
+    width: 205px;
 }
 
 .header_filter .element {
@@ -75,19 +77,23 @@ body {
     }
 }
 
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1024px) {
     .header_sources {
         float: none;
         width: auto;
     }
 }
 
-@media screen and (max-width: 710px) {
+@media screen and (max-width: 790px) {
     .header_filter .element {
         display: block;
         margin-right: 0;
     }
-    .header_filter label {
+
+    .header__source-select-label, 
+    .header__category-label, 
+    .header__language-label, 
+    .header__country-label {
         display: inline-block;
         width: 128px;
     }
