@@ -17,7 +17,7 @@ export default class NewsService {
                     return res;
                 } else {
                     var error = new Error(res.statusText);
-                    error.response = res;
+                    error.response = res.json();
                     throw error;
                 }
             })

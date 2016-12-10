@@ -10,20 +10,32 @@ export default class SourceService {
         return SourceService.instance; // singleton pattern
     }
 
+    processParam(quary, param, paramName) {
+        if(param) { 
+            if(quary) quary += '&';
+            quary += paramName + '=' + param; 
+        }
+
+        return quary;
+    }
+
     getSource(category, language, country) {
-        let req = 'https://newsapi.org/v1/sources?';
-        if(category) { req += 'category=' + category; }
+        let req = 'https://newsapi.org/v1/sources';
+        let quary = '';
 
-        if(language) { req += 'language=' + language; }
+        if(category || language || country) { req += '?'; }
 
-        if(country) { req += 'country=' + country; }
-        return fetch(req)
+        quary = this.processParam(quary, category, 'category');
+        quary = this.processParam(quary, language, 'language');
+        quary = this.processParam(quary, country, 'country');
+
+        return fetch(req + quary)
             .then(res => {
                 if (res.status >= 200 && res.status < 300) {
                     return res;
                 } else {
                     var error = new Error(res.statusText);
-                    error.response = res;
+                    error.response = res.json();
                     throw error;
                 }
             })

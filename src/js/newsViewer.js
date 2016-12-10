@@ -31,10 +31,17 @@ export default class NewsViewer {
         this._container.innerHTML = elements.join('');
     }
 
+    errorHandling(error) {        
+        error.response.then(res => {
+            let msgHTML = `<div class=\"news-item\">${res.message || error.message}</div>`;
+            this._container.innerHTML = msgHTML;
+        });        
+    }
+
     view(src) {
         this._newsSvc.getNews(src)
             .then(this._init.bind(this))
             .then(this._view.bind(this))
-            .catch(error => { console.log('request failed', error); });
+            .catch(this.errorHandling.bind(this));
     }
 };
