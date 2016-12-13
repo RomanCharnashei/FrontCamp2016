@@ -2,8 +2,6 @@ conn = new Mongo();
 
 db = conn.getDB("roman_charnashei-posts");
 
-db.dropDatabase();
-
 authorsIds = db.authors.insertMany([
 	{ name: "author1" },
 	{ name: "author2" },

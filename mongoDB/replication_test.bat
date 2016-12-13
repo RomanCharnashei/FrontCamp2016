@@ -1,0 +1,1 @@
+mongo< replication_test.js
