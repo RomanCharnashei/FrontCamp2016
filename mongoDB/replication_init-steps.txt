@@ -1,6 +1,0 @@
-rs.initiate()
-rs.add("EPBYGOMW0312:40001")
-rs.add("EPBYGOMW0312:40002", {arbiterOnly: true})
-rs.status()
-use bookstore
-db.books.insert({title: "Some book"})
