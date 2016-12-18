@@ -1,6 +1,7 @@
   /*font-family: 'Raleway', sans-serif;*/
   /*font-family: 'Arimo', sans-serif;*/
   /*font-family: 'Open Sans', sans-serif;*/
+  /*font-family: 'Roboto', sans-serif;*/
 html, body {
   margin: 0;
   padding: 0;
@@ -63,6 +64,7 @@ ul.header__menu, li.header__menu-item {
   left: 50%;
   margin-left: -340px;
   font-size: 100%;
+  transform: translateY(-50%);
 }
 
 .article-priview {
@@ -71,19 +73,7 @@ ul.header__menu, li.header__menu-item {
   box-shadow: 0 1px 4px rgba(0,0,0,.04);
   border-radius: 3px;
   padding: 10px 15px 20px;
-  color: rgba(0, 0, 0, 0.8);
-}
-
-.article-priview__title {
-  font-family: 'Roboto', sans-serif;
-  text-indent: 30px;
-  
-}
-
-.article-priview__content {
-  text-indent: 30px;
-  font-size: 17px;
-  font-family: 'Roboto', sans-serif;
+  color: rgba(35, 50, 72, 0.8);
 }
 
 .content {

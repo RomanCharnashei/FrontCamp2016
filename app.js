@@ -4,13 +4,18 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var connStr = 'mongodb://just_user:qwertywsx@ds135798.mlab.com:35798/blogs';
 var handlebars = require('express-handlebars').create({ defaultLayout: 'main' });
 
-var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
 
+var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
+    replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
+
+mongoose.connect(connStr, options);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars.engine);
@@ -24,7 +29,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+app.use(require('./models/init'));
+
+app.use('/', require('./routes/index')(require('./models/article')));
 app.use('/users', users);
 
 // catch 404 and forward to error handler

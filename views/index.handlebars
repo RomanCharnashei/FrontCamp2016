@@ -1,32 +1,6 @@
-<div class="article-priview">
-    <h2 class="article-priview__title">Lorem ipdsf sfdf sdf sdf fdew ewfe fwef wsf efsum dolor.</h2>
-    <p class="article-priview__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil qui, earum adipisci culpa consectetur hic necessitatibus
-        tenetur quod itaque vel voluptatum at, recusandae rerum, quaerat sint dignissimos totam minima ipsam quibusdam. Quos
-        dolorum, facere autem officia perferendis culpa. Iusto nemo vitae ullam sunt magni corporis eveniet, magnam, et culpa
-        obcaecati.</p>
-</div>
-<div class="article-priview">
-    <h2 class="article-priview__title">Lorem.</h2>
-    <p class="article-priview__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil qui, earum adipisci culpa consectetur hic necessitatibus
-        tenetur quod itaque vel voluptatum at, recusandae rerum, quaerat sint dignissimos totam minima ipsam quibusdam. Quos
-        dolorum, facere autem officia perferendis culpa. Iusto nemo vitae ullam sunt magni corporis eveniet, magnam, et culpa
-        obcaecati.</p>
-</div>
-<div class="article-priview">
-    <h2 class="article-priview__title">Ipsum dolor.</h2>
-    <p class="article-priview__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil qui, earum adipisci culpa consectetur hic necessitatibus
-        tenetur quod itaque vel voluptatum at, recusandae rerum, quaerat sint dignissimos totam minima ipsam quibusdam. Quos
-        dolorum.</p>
-</div>
-<div class="article-priview">
-    <h2 class="article-priview__title">Lorem ipsum dolor.</h2>
-    <p class="article-priview__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil qui, earum adipisci culpa consectetur hic necessitatibus
-        tenetur quod itaque vel voluptatum at, recusandae rerum, quaerat sint dignissimos totam minima ipsam quibusdam. Quos
-        dolorum, facere autem officia perferendis culpa. Iusto nemo vitae ullam sunt magni corporis eveniet, magnam, et culpa
-        obcaecati.</p>
-</div>
-<div class="article-priview">
-    <h2 class="article-priview__title">Dolor.</h2>
-    <p class="article-priview__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil qui, earum adipisci culpa consectetur hic necessitatibus
-        tenetur quod itaque vel voluptatum at, recusandae rerum, quaerat sint dignissimos totam minima ipsam quibusdam.</p>
-</div>
+{{#each articles}}
+    <div class="article-priview">
+        <h2 class="article-priview__title">{{title}}</h2>
+        <p class="article-priview__content">{{preview}}</p>
+    </div>
+{{/each}}
