@@ -1,0 +1,27 @@
+<div class="article-form">
+    <h1 class="article-form__title">Edit article</h1>
+    <form>        
+        <p>
+            <label class="article-form__label" for="title">Title:</label>
+            <input class="article-form__element" id="title" type="text" name="title" value="{{article.title}}">
+        </p>
+        <p>
+            <label class="article-form__label" for="content">Content:</label>
+            <textarea class="article-form__element" name="content" id="content" rows="20">{{article.content}}</textarea>
+        </p>
+        <p>
+            <label class="article-form__label" for="preview">Preview:</label>
+            <textarea class="article-form__element" name="preview" id="preview" rows="5">{{article.preview}}</textarea>
+        </p>
+        <p>
+            <label class="article-form__label" for="tags">Tags:</label>
+            <input class="article-form__element" id="tags" type="text" name="tags" value="{{article.tags}}">
+        </p>
+        <input type="hidden" name="_method" value="PUT">
+        <p class="article-form__btn-section">
+            <input formmethod="POST" formaction="/article/{{article._id}}?_method=PUT" type="submit" class="article-form__btn" value="Save">
+            <a class="article-form__btn" href="/">Cancel</a>
+            <input formmethod="POST" formaction="/article/{{article._id}}?_method=DELETE" type="submit" class="article-form__btn" value="Delete">
+        </p>        
+    </form>
+</div>

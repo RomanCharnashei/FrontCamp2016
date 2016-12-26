@@ -1,0 +1,25 @@
+<div class="article-form">
+    <h1 class="article-form__title">Create article</h1>
+    <form action="/article" method="POST">        
+        <p>
+            <label class="article-form__label" for="title">Title:</label>
+            <input class="article-form__element" id="title" type="text" name="title" value="{{article.title}}">
+        </p>
+        <p>
+            <label class="article-form__label" for="content">Content:</label>
+            <textarea class="article-form__element" name="content" id="content" rows="20">{{article.content}}</textarea>
+        </p>
+        <p>
+            <label class="article-form__label" for="preview">Preview:</label>
+            <textarea class="article-form__element" name="preview" id="preview" rows="5">{{article.preview}}</textarea>
+        </p>
+        <p>
+            <label class="article-form__label" for="tags">Tags:</label>
+            <input class="article-form__element" id="tags" type="tags" name="title" value="{{article.tags}}">
+        </p>
+        <p class="article-form__btn-section">
+            <input class="article-form__btn" type="submit" value="Save">
+            <a class="article-form__btn" href="/">Cancel</a>
+        </p>        
+    </form>
+</div>

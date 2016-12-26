@@ -1,6 +1,15 @@
 {{#each articles}}
     <div class="article-priview">
-        <h2 class="article-priview__title">{{title}}</h2>
-        <p class="article-priview__content">{{preview}}</p>
+        {{>priview-user user=_user pubDate=pubDate addClass="article-priview__user"}}
+        <div class="article-priview__content-box">
+            <a class="article-priview__article-link" href="/article/{{_id}}"></a>
+            <h2 class="article-priview__title">{{title}}</h2>
+            <p class="article-priview__content">{{preview}}</p>
+        </div>        
+        {{#if ../user_profile}}
+            {{#entityiseq _user ../user_profile}}
+                <a class="article-priview_btn" href="/article/{{_id}}/edit">Edit</a>
+            {{/entityiseq}}
+        {{/if}}
     </div>
 {{/each}}

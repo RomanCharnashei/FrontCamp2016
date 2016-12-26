@@ -1,0 +1,13 @@
+<div class="user-profile">
+    <img class="user-profile__ava" src="{{user.photo_uri}}" alt="">
+    <div class="user-profile__lockup">
+        {{#if user.vk_profile}}
+            <a href="{{user.vk_profile}}" class="user-profile__name">{{user.name}}</a>
+            {{else}}
+            <span class="user-profile__name">{{user.name}}</span>
+        {{/if}}            
+    </div>    
+    <a class="user-profile_btn" href="/article/create">Create article</a>
+    <a class="user-profile_btn" href="/articles?userId={{user._id}}">My articles</a>
+    <a class="user-profile_btn" href="/auth/signout">Sign out</a>
+</div>

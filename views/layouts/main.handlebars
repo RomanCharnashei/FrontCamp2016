@@ -11,18 +11,38 @@
 <body>
     <div class="header">
         <ul class="header__menu">
-            <li class="header__menu-item"><a class="header__menu-link" href="#">Politics</a></li>
-            <li class="header__menu-item"><a class="header__menu-link" href="#">Economy</a></li>
-            <li class="header__menu-item"><a class="header__menu-link" href="#">Sports</a></li>
-            <li class="header__menu-item"><a class="header__menu-link" href="#">Art</a></li>                        
-            <li class="header__menu-item"><a class="header__menu-link" href="#">Entertainment</a></li>
+            <li class="header__menu-item">
+                <a class="header__menu-link" href="/">Home</a>
+            </li>
+            <li class="header__menu-item">
+                <a class="header__menu-link" href="/articles?tags=politics">Politics</a>
+            </li>
+            <li class="header__menu-item">
+                <a class="header__menu-link" href="/articles?tags=economy">Economy</a>
+            </li>
+            <li class="header__menu-item">
+                <a class="header__menu-link" href="/articles?tags=sports">Sports</a>
+            </li>
+            <li class="header__menu-item">
+                <a class="header__menu-link" href="/articles?tags=art">Art</a>
+            </li>                        
+            <li class="header__menu-item">
+                <a class="header__menu-link" href="/articles?tags=entertainment">Entertainment</a>
+            </li>
         </ul>
+        <div class="user-box header_user-box">
+            {{#if user_profile}}
+                    {{>user-profile user=user_profile addClass=""}}
+                {{else}}
+                    <a class="user-box_loging" href="/auth/vk">Sign in with VK</a>
+            {{/if}}
+        </div>        
     </div>
     <div class="content">
         {{{body}}}
     </div>
     <div class="footer">
-
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, ea!
     </div>
 </body>
 </html>

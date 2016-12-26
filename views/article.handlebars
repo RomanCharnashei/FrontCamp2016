@@ -1,0 +1,10 @@
+<div class="article">
+    {{>priview-user user=article._user pubDate=article.pubDate addClass="article__user"}}
+    <h2 class="article__title">{{article.title}}</h2>
+    <p class="article__content">{{article.content}}</p>
+    {{#if user_profile}}
+        {{#entityiseq article._user user_profile}}
+            <a class="article-priview_btn" href="/article/{{article._id}}/edit">Edit</a>
+        {{/entityiseq}}
+    {{/if}}
+</div>

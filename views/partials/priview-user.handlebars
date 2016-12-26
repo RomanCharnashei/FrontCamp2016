@@ -1,0 +1,13 @@
+<div class="priview-user {{addClass}}">
+    <div class="priview-user__box">
+        <img class="priview-user__img" src="{{user.photo_uri}}" alt="">
+        <div class="priview-user__author-lockup">
+            {{#if user.vk_profile}}
+                <a href="{{user.vk_profile}}" class="priview-user__user-link">{{user.name}}</a>
+                {{else}}
+                <span>{{user.name}}</span>
+            {{/if}}            
+            <div class="priview-user__info">{{pubDate}}</div>
+        </div>
+    </div>
+</div>
