@@ -20,7 +20,7 @@
         <input type="hidden" name="_method" value="PUT">
         <p class="article-form__btn-section">
             <input formmethod="POST" formaction="/article/{{article._id}}?_method=PUT" type="submit" class="article-form__btn" value="Save">
-            <a class="article-form__btn" href="/">Cancel</a>
+            <a class="article-form__btn" href="{{referrer}}">Cancel</a>
             <input formmethod="POST" formaction="/article/{{article._id}}?_method=DELETE" type="submit" class="article-form__btn" value="Delete">
         </p>        
     </form>

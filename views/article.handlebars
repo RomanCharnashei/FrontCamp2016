@@ -4,7 +4,8 @@
     <p class="article__content">{{article.content}}</p>
     {{#if user_profile}}
         {{#entityiseq article._user user_profile}}
-            <a class="article-priview_btn" href="/article/{{article._id}}/edit">Edit</a>
+            <a class="article-priview_btn" href="/article/{{article._id}}/edit">Edit</a>            
         {{/entityiseq}}
     {{/if}}
+    <a class="article-priview_btn" href="{{referrer}}">Go back</a>
 </div>

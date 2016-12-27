@@ -21,7 +21,7 @@
     font-weight: normal;
     box-sizing: border-box;
     min-height: 100%;
-    background-color: #365e6f;
+    background-color: #46444e;
   }
   
   h1,
@@ -98,6 +98,7 @@
     padding: 10px;
     box-sizing: border-box;
     font-size: 70%;
+    opacity: 0.8;
   }
 
   .content {
@@ -242,10 +243,11 @@
     display: inline-block;
     text-align: right;
     vertical-align: baseline;
+    margin-right: 10px;
   }
 
   .article-form__element {
-    width: calc(100% - 73px);
+    width: calc(100% - 83px);
     vertical-align: top;
   }
 

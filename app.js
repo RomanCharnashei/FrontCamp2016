@@ -71,6 +71,7 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./middlewares/init'));
 app.use(require('./middlewares/user_profile'));
+app.use(require('./middlewares/check_json'));
 
 app.use('/', require('./routes/index')(Article));
 app.use('/article', require('./routes/article')(Article));
