@@ -9,15 +9,29 @@ export default React.createClass({
         };
     },
 
-    componentDidMount: function(){
+    fetchArticles: function(){
         var uri = '/articles';
         if(this.props.location.search) {
             uri += this.props.location.search;
         }
         axios.get(uri)
             .then(res => {
-                this.setState({ articles: res.data });
+                if (!this.ignoreLastFetch){
+                    this.setState({ articles: res.data });
+                }                    
             });
+    },
+
+    componentDidMount: function(){
+        this.fetchArticles();
+    },
+
+    componentDidUpdate: function(){
+        this.fetchArticles();
+    },
+
+    componentWillUnmount: function(){
+        this.ignoreLastFetch = true;
     },
 
     render: function() {

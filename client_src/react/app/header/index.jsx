@@ -21,7 +21,7 @@ export default function Header(){
                     <Link className="header__menu-link" to={{ pathname: 'articles', query: { tags: 'art' } }}>Art</Link>
                 </li>                        
                 <li className="header__menu-item">
-                    <Link className="header__menu-link" to={{ pathname: 'articles', query: { tags: 'entertainment' } }}>Art</Link>
+                    <Link className="header__menu-link" to={{ pathname: 'articles', query: { tags: 'entertainment' } }}>Entertainment</Link>
                 </li>
             </ul>
         </div>
