@@ -1,26 +1,27 @@
 import React from 'react';
+import { IndexLink, Link } from 'react-router';
 
 export default function Header(){
     return (
         <div className="header">
             <ul className="header__menu">
                 <li className="header__menu-item">
-                    <a className="header__menu-link" href="/">Home</a>
+                    <IndexLink className="header__menu-link" to="/">Home</IndexLink>
                 </li>
                 <li className="header__menu-item">
-                    <a className="header__menu-link" href="/articles?tags=politics">Politics</a>
+                    <Link className="header__menu-link" to={{ pathname: 'articles', query: { tags: 'politics' } }}>Politics</Link>
                 </li>
                 <li className="header__menu-item">
-                    <a className="header__menu-link" href="/articles?tags=economy">Economy</a>
+                    <Link className="header__menu-link" to={{ pathname: 'articles', query: { tags: 'economy' } }}>Economy</Link>
                 </li>
                 <li className="header__menu-item">
-                    <a className="header__menu-link" href="/articles?tags=sports">Sports</a>
+                    <Link className="header__menu-link" to={{ pathname: 'articles', query: { tags: 'sports' } }}>Sports</Link>
                 </li>
                 <li className="header__menu-item">
-                    <a className="header__menu-link" href="/articles?tags=art">Art</a>
+                    <Link className="header__menu-link" to={{ pathname: 'articles', query: { tags: 'art' } }}>Art</Link>
                 </li>                        
                 <li className="header__menu-item">
-                    <a className="header__menu-link" href="/articles?tags=entertainment">Entertainment</a>
+                    <Link className="header__menu-link" to={{ pathname: 'articles', query: { tags: 'entertainment' } }}>Art</Link>
                 </li>
             </ul>
         </div>
