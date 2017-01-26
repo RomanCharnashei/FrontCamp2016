@@ -1,11 +1,44 @@
 var gulp = require('gulp'),
+    gutil = require('gulp-util'),
     nodemon = require('gulp-nodemon'),
     browserSync = require('browser-sync').create(),
-    env = require('gulp-env');
+    env = require('gulp-env'),
+    browserify = require('browserify'),
+    buffer = require('vinyl-buffer'),
+    source = require('vinyl-source-stream'),
+    ngAnnotate = require('gulp-ng-annotate'),
+    uglify = require('gulp-uglify'),
+    watchify = require('watchify'),
+    sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('default', ['browser-sync'], function () {
+gulp.task('default', ['build:js', 'browser-sync']);
 
+
+gulp.task('build:js', function(){     
+    var watchedBrowserify = watchify(browserify({
+        basedir: './client_src',
+        debug: true,
+        entries: ['app.js']
+    }));
+
+    watchedBrowserify.on("update", bundle);
+    watchedBrowserify.on("log", gutil.log);
+
+    function bundle(){
+        return watchedBrowserify            
+            .bundle()            
+            .pipe(source('bundle.js'))                     
+            .pipe(buffer())
+            .pipe(sourcemaps.init({loadMaps: true}))
+            .pipe(ngAnnotate())            
+            .pipe(uglify())            
+            .pipe(sourcemaps.write('./maps'))
+            .pipe(gulp.dest('./public'));
+    };
+
+    return bundle();
 });
+
 
 gulp.task('browser-sync', ['nodemon'], function(cb) {
 	browserSync.init(null, {
