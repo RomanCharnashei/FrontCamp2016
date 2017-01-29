@@ -1,4 +1,9 @@
 var angular = require('angular');
-require('angular-ui-router');
-angular.module('blog', ['ui.router'])
-    .controller('mainCtrl', require('./mainCtrl.js'));
+
+angular.module('blog', [require('angular-ui-router')])
+    .config(require('./config'))
+    .controller('priviewListCtrl', require('./priview_list/ctrl'));
+
+angular.element(function() {
+    angular.bootstrap(document, ['blog']);
+});

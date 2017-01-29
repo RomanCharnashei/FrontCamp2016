@@ -1,13 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="blog">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Blog</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div ng-controller="mainCtrl">
-        <span>{{text}}</span>
+    <div class="header">
+        <ul class="header__menu">
+            <li class="header__menu-item">
+                <a class="header__menu-link" href="/">Home</a>
+            </li>
+            <li class="header__menu-item">
+                <a class="header__menu-link" href="/articles?tags=politics">Politics</a>
+            </li>
+            <li class="header__menu-item">
+                <a class="header__menu-link" href="/articles?tags=economy">Economy</a>
+            </li>
+            <li class="header__menu-item">
+                <a class="header__menu-link" href="/articles?tags=sports">Sports</a>
+            </li>
+            <li class="header__menu-item">
+                <a class="header__menu-link" href="/articles?tags=art">Art</a>
+            </li>                        
+            <li class="header__menu-item">
+                <a class="header__menu-link" href="/articles?tags=entertainment">Entertainment</a>
+            </li>
+        </ul>       
     </div>
-    <script src="bundle.js"></script>
+    <div class="content">
+        <ui-view></ui-view>
+    </div>
+    <div class="footer">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, ea!
+    </div>
+    <script src="./js/libs.js"></script>
+    <script src="./js/bundle.js"></script>
 </body>
 </html>

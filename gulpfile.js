@@ -9,22 +9,68 @@ var gulp = require('gulp'),
     ngAnnotate = require('gulp-ng-annotate'),
     uglify = require('gulp-uglify'),
     watchify = require('watchify'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    watch = require('gulp-watch');
 
-gulp.task('default', ['build:js', 'browser-sync']);
+const client_src = './client_src';
+
+const client_dest = './public';
+const client_views_dest = client_dest + '/views';
+const client_js_dest = client_dest + '/js';
 
 
-gulp.task('build:js', function(){     
-    var watchedBrowserify = watchify(browserify({
-        basedir: './client_src',
+let libs = [
+    'angular',
+    'angular-ui-router'
+];
+
+gulp.task('default', ['nodemon', 'browser-sync', 'build:libs', 'build:js', 'watch:html']);
+
+gulp.task( 'watch:html', ['copy:html'], function() {
+    return watch(client_src + '/**/*.html', { ignoreInitial: false })
+        .pipe(gulp.dest(client_views_dest))
+        .on('error', gutil.log);    
+});
+
+gulp.task('copy:html', function(){
+    return gulp.src(client_src + '/**/*.html')
+        .pipe(gulp.dest(client_views_dest));
+});
+
+gulp.task('build:libs', function(){
+    var b = browserify({
+        debug: true
+    });
+
+    libs.forEach(function(lib) {
+        b.require(lib);
+    });
+
+    return b.bundle()            
+        .pipe(source('libs.js'))                     
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(gulp.dest(client_js_dest));
+});
+
+gulp.task('build:js', function(){
+    let b = browserify({
+        basedir: client_src,
         debug: true,
         entries: ['app.js']
-    }));
+    });
+
+    libs.forEach(function(lib) {
+        b.external(lib);
+    });
+
+    let watchedBrowserify = watchify(b);
 
     watchedBrowserify.on("update", bundle);
     watchedBrowserify.on("log", gutil.log);
 
     function bundle(){
+
         return watchedBrowserify            
             .bundle()            
             .pipe(source('bundle.js'))                     
@@ -33,14 +79,14 @@ gulp.task('build:js', function(){
             .pipe(ngAnnotate())            
             .pipe(uglify())            
             .pipe(sourcemaps.write('./maps'))
-            .pipe(gulp.dest('./public'));
+            .pipe(gulp.dest(client_js_dest));
     };
 
     return bundle();
 });
 
 
-gulp.task('browser-sync', ['nodemon'], function(cb) {
+gulp.task('browser-sync', function(cb) {
 	browserSync.init(null, {
 		proxy: "http://localhost:3000",
         files: ["public/**/*.*", "views/**/*.*"],
