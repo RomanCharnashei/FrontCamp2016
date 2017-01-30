@@ -10,7 +10,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     watchify = require('watchify'),
     sourcemaps = require('gulp-sourcemaps'),
-    watch = require('gulp-watch');
+    watch = require('gulp-watch'),
+    stringify = require('stringify');
 
 const client_src = './client_src';
 
@@ -27,14 +28,14 @@ let libs = [
 gulp.task('default', ['nodemon', 'browser-sync', 'build:libs', 'build:js', 'watch:html']);
 
 gulp.task( 'watch:html', ['copy:html'], function() {
-    return watch(client_src + '/**/*.html', { ignoreInitial: false })
-        .pipe(gulp.dest(client_views_dest))
+    return watch(client_src + '/index.html', { ignoreInitial: false })
+        .pipe(gulp.dest(client_dest))
         .on('error', gutil.log);    
 });
 
 gulp.task('copy:html', function(){
-    return gulp.src(client_src + '/**/*.html')
-        .pipe(gulp.dest(client_views_dest));
+    return gulp.src(client_src + '/index.html')
+        .pipe(gulp.dest(client_dest));
 });
 
 gulp.task('build:libs', function(){
@@ -49,7 +50,9 @@ gulp.task('build:libs', function(){
     return b.bundle()            
         .pipe(source('libs.js'))                     
         .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(uglify())
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(client_js_dest));
 });
 
@@ -58,6 +61,10 @@ gulp.task('build:js', function(){
         basedir: client_src,
         debug: true,
         entries: ['app.js']
+    })
+    .transform(stringify, {
+      appliesTo: { includeExtensions: ['.html'] },
+      minify: true
     });
 
     libs.forEach(function(lib) {

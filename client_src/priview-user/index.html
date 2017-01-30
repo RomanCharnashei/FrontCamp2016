@@ -1,0 +1,10 @@
+<div class="priview-user {{$ctrl.addClass}}">
+    <div class="priview-user__box">
+        <img class="priview-user__img" ng-src="{{$ctrl.user.photo_uri}}" alt=""></img>
+        <div class="priview-user__author-lockup">
+            <a ng-if="!!$ctrl.user.vk_profile" href="{{$ctrl.user.vk_profile}}" class="priview-user__user-link">{{$ctrl.user.name}}</a>
+            <span ng-if="!$ctrl.user.vk_profile">{{$ctrl.user.name}}</span>        
+            <div class="priview-user__info">{{$ctrl.pubDate | date:'medium'}}</div>
+        </div>
+    </div>
+</div>

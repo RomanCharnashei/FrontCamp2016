@@ -1,0 +1,9 @@
+<div class="article-priview">
+    <priview-user user="$ctrl.article._user" pub-date="$ctrl.article.pubDate" add-class="'article-priview__user'">
+    </priview-user>
+    <div class="article-priview__content-box">
+        <a class="article-priview__article-link" ui-sref="article({id: $ctrl.article._id})"></a>
+        <h2 class="article-priview__title">{{$ctrl.article.title}}</h2>
+        <p class="article-priview__content">{{$ctrl.article.preview}}</p>
+    </div>
+</div>

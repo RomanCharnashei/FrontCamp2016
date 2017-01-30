@@ -1,0 +1,7 @@
+<div class="article">
+    <priview-user user="$ctrl.article._user" pub-date="$ctrl.article.pubDate" add-class="'article__user'">        
+    </priview-user>
+    <h2 class="article__title">{{$ctrl.article.title}}</h2>
+    <p class="article__content">{{$ctrl.article.content}}</p>
+    <a class="article-priview_btn" ng-click="$event.preventDefault();$ctrl.goBack()">Go back</a>
+</div>
