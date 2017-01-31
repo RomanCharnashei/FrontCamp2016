@@ -12,11 +12,11 @@ module.exports = /*@ngInject*/ function($stateProvider, $urlRouterProvider) {
             }
         })
         .state('articles', {
-            url: '/articles?tags',
+            url: '/articles?tags&userId',
             component: 'priviewArticles',
             resolve: {
                 articles: /*@ngInject*/ function(articleSvc, $stateParams) {
-                    return articleSvc.list($stateParams.tags);
+                    return articleSvc.list($stateParams);
                 }
             }
         })
@@ -26,10 +26,19 @@ module.exports = /*@ngInject*/ function($stateProvider, $urlRouterProvider) {
             resolve: {
                 article: /*@ngInject*/ function(articleSvc, $stateParams) {
                     return articleSvc.one($stateParams.id);
-                },
-                previousSate: /*@ngInject*/ function($q, $state) {
-                    console.log('State: ', $state.previous);
-                    return $q.when($state.previous);
+                }
+            }
+        })
+        .state('createArticle', {
+            url: '/article/create',
+            component: 'articleCreator'
+        })
+        .state('editArticle', {
+            url: '/article/:id',
+            component: 'articleEditor',
+            resolve: {
+                article: /*@ngInject*/ function(articleSvc, $stateParams) {
+                    return articleSvc.one($stateParams.id);
                 }
             }
         });

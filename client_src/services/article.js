@@ -1,6 +1,6 @@
 module.exports = /*@ngInject*/ function($http) {
-    this.list = function(tags){
-        return $http.get('/articles', {params:{tags:tags}})
+    this.list = function(stateParams){
+        return $http.get('/articles', {params:stateParams})
             .then(function(res){
                 return res.data;
             });
@@ -11,5 +11,17 @@ module.exports = /*@ngInject*/ function($http) {
         .then(function(res){
             return res.data;
         });
+    };
+
+    this.create = function(article) {
+        return $http.post('/article', article);
+    };
+
+    this.save = function(article) {
+        return $http.put('/article/' + article._id, article);
+    };
+
+    this.delete = function(id){
+        return $http.delete('/article/' + id);
     };
 }

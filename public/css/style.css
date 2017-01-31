@@ -142,9 +142,6 @@
   }
   
 
-
-
-
   .priview-user__img {
     width: 40px;
     border-radius: 50%;
@@ -157,7 +154,7 @@
   }
   
   .priview-user__author-lockup {
-    margin-left: 5px;
+    margin-left: 10px;
   }
   
   .priview-user::after {
@@ -222,6 +219,7 @@
 
   .user-profile__ava {
     border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-right: 5px;
   }
 
   .user-profile_btn {
@@ -247,8 +245,17 @@
   }
 
   .article-form__element {
-    width: calc(100% - 83px);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    border: 1px solid #9a9797;;
+    width: calc(100% - 84px);
     vertical-align: top;
+    border-radius: 3px;
+    resize: none;
+    box-sizing: border-box;
+    padding: 5px;
   }
 
   .article-form__title {
@@ -256,11 +263,12 @@
   }
 
   .article-form__btn-section {
-    margin-left: 72px;
+    margin-left: 78px;
   }
 
   .article-form__btn,
   .article-priview_btn {
+    font-family: inherit;
     text-decoration: none;
     font-size: 80%;
     color: rgba(0, 0, 0, 0.6);
@@ -278,3 +286,11 @@
   .article-priview_btn:focus {
 
   }
+input.ng-invalid.ng-dirty, textarea.ng-invalid.ng-dirty { 
+  border: solid red 1px;
+}
+
+.error-msg {
+  color: red;
+  margin-left: 78px;
+}

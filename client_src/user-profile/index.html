@@ -1,0 +1,13 @@
+<div class="user-box header_user-box">
+    <div ng-if="$ctrl.userProfile.user" class="user-profile">
+        <img class="user-profile__ava" ng-src="{{$ctrl.userProfile.user.photo_uri}}" alt="">
+        <div class="user-profile__lockup">
+            <a ng-if="$ctrl.userProfile.user.vk_profile" href="{{$ctrl.userProfile.user.vk_profile}}" class="user-profile__name">{{$ctrl.userProfile.user.name}}</a>
+            <span ng-if="!$ctrl.userProfile.user.vk_profile" class="user-profile__name">{{$ctrl.userProfile.user.name}}</span>          
+        </div>    
+        <a class="user-profile_btn" ui-sref="createArticle">Create article</a>
+        <a class="user-profile_btn" ui-sref="articles({userId: $ctrl.userProfile.user._id})">My articles</a>
+        <a class="user-profile_btn" href="#"  ng-click="$ctrl.signout()">Sign out</a>
+    </div>
+    <a ng-click="$ctrl.signin()" ng-if="!$ctrl.userProfile.user" class="user-box_loging" href="#">Sign in with VK</a>
+</div>   

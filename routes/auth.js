@@ -17,7 +17,16 @@ module.exports = function (passport) {
   router.route('/signout')
     .get(function(req, res) {
       req.logout();
-      res.redirect('/');
+      if(req.is_json) {
+        res.json({msg: 'User has successfully signout'});
+      } else {
+        res.redirect('/');
+      }      
+    });
+
+  router.route('/me')
+    .get(function(req, res) {
+      res.json({user: req.user});
     });
 
   return router;

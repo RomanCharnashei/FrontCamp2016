@@ -6,4 +6,5 @@
         <h2 class="article-priview__title">{{$ctrl.article.title}}</h2>
         <p class="article-priview__content">{{$ctrl.article.preview}}</p>
     </div>
+    <a ng-if="$ctrl.IamAuthor()" class="article-priview_btn" ui-sref="editArticle({id: $ctrl.article._id})">Edit</a>
 </div>

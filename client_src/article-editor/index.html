@@ -1,0 +1,51 @@
+<div class="article-form">
+    <h1 class="article-form__title">Create article</h1>
+    <form ng-submit="$ctrl.submit()" name="$ctrl.articleForm">        
+        <p>
+            <label class="article-form__label" for="title">Title:</label>
+            <input  ng-model="$ctrl.article.title"
+                    required
+                    class="article-form__element" 
+                    id="title" type="text" 
+                    name="title">
+            <span class="error-msg" ng-show="$ctrl.showError($ctrl.articleForm.title, 'required')">
+                This field is required
+            </span>
+        </p>
+        <p>
+            <label class="article-form__label" for="content">Content:</label>
+            <textarea ng-model="$ctrl.article.content"
+                      required
+                      blog-length="20"
+                      class="article-form__element" 
+                      name="content" 
+                      id="content"
+                      rows="20"></textarea>
+            <span class="error-msg" ng-show="$ctrl.showError($ctrl.articleForm.content, 'required')">
+                This field is required
+            </span>
+            <span class="error-msg" ng-show="$ctrl.showError($ctrl.articleForm.content, 'bloglength')">
+                Text length must be at least 20 characters
+            </span>
+        </p>
+        <p>
+            <label class="article-form__label" for="preview">Preview:</label>
+            <textarea ng-model="$ctrl.article.preview" 
+                      class="article-form__element" 
+                      name="preview" id="preview" 
+                      rows="5"></textarea>
+        </p>
+        <p>
+            <label class="article-form__label" for="tags">Tags:</label>
+            <input ng-model="$ctrl.article.tags"
+                   class="article-form__element" 
+                   id="tags" type="tags" 
+                   name="tags">
+        </p>
+        <p class="article-form__btn-section">
+            <input  ng-disabled="!$ctrl.canSave()" class="article-form__btn" type="submit" value="Save">
+            <input ng-click="$event.preventDefault();$ctrl.goBack()" type="button" class="article-form__btn" value="Cancel">
+            <input ng-click="$ctrl.delete()" type="button" class="article-form__btn" value="Delete">
+        </p>        
+    </form>
+</div>

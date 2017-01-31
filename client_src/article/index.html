@@ -3,5 +3,6 @@
     </priview-user>
     <h2 class="article__title">{{$ctrl.article.title}}</h2>
     <p class="article__content">{{$ctrl.article.content}}</p>
+    <a ng-if="$ctrl.IamAuthor()" class="article-priview_btn" ui-sref="editArticle({id: $ctrl.article._id})">Edit</a>  
     <a class="article-priview_btn" ng-click="$event.preventDefault();$ctrl.goBack()">Go back</a>
 </div>
