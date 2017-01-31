@@ -7,7 +7,7 @@ module.exports = /*@ngInject*/ function($http) {
     };
 
     this.one = function(id) {
-        return $http.get('/article/' + id)
+        return $http.get('/article/' + id + '/edit')
         .then(function(res){
             return res.data;
         });

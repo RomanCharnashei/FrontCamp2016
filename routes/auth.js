@@ -11,11 +11,15 @@ module.exports = function (passport) {
       failureRedirect: '/login'
     }),
       function(req, res){
-        res.redirect('/');
+        if(req.is_json) {
+          res.json({msg: 'User has successfully signin'});
+        } else {
+          res.redirect('/');
+        }
       });
 
   router.route('/signout')
-    .get(function(req, res) {
+    .delete(function(req, res) {
       req.logout();
       if(req.is_json) {
         res.json({msg: 'User has successfully signout'});

@@ -52,12 +52,16 @@ module.exports = function(Article) {
     });    
   });
 
-  router.get('/:articleId/edit', referrer.save_referrer, function(req, res){
-    req.session.referer = req.header('Referer') || '/';
-    req.article.tags = req.article.tagsToView();
-    res.model.article = req.article;
-    res.model.referrer = referrer.get_referrer(req);
-    res.render('edit', res.model);
+  router.get('/:articleId/edit', referrer.save_referrer, function(req, res){    
+    req.article.tags = req.article.tagsToView();    
+    if(req.is_json) {
+          return res.json(req.article);
+    } else {
+      req.session.referer = req.header('Referer') || '/';
+      res.model.article = req.article;
+      res.model.referrer = referrer.get_referrer(req);
+      res.render('edit', res.model);
+    }
   });
 
   router.route('/:articleId') 

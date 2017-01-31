@@ -1,4 +1,4 @@
-module.exports = /*@ngInject*/ function($http) {
+module.exports = /*@ngInject*/ function($http, $window) {
     var profile = {
         user: null
     };
@@ -8,14 +8,11 @@ module.exports = /*@ngInject*/ function($http) {
     };
 
     this.signin = function(){
-        return $http.get('auth/vk')
-            .then(function(){
-                return this.fetch();
-            });
+         $window.open('auth/vk');
     }
 
     this.signout = function(){
-        $http.get('auth/signout')
+        $http.delete('auth/signout')
         .then(function(){
             profile.user = null;
         });
