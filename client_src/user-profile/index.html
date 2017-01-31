@@ -9,5 +9,5 @@
         <a class="user-profile_btn" ui-sref="articles({userId: $ctrl.userProfile.user._id})">My articles</a>
         <a class="user-profile_btn" href="#"  ng-click="$ctrl.signout()">Sign out</a>
     </div>
-    <a ng-click="$ctrl.signin()" ng-if="!$ctrl.userProfile.user" class="user-box_loging" href="#">Sign in with VK</a>
+    <a ng-if="!$ctrl.userProfile.user" class="user-box_loging" href="/auth/vk">Sign in with VK</a>
 </div>   
