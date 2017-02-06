@@ -11,7 +11,10 @@ var gulp = require('gulp'),
     watchify = require('watchify'),
     sourcemaps = require('gulp-sourcemaps'),
     watch = require('gulp-watch'),
-    stringify = require('stringify');
+    stringify = require('stringify'),
+    KarmaServer = require('karma').Server,
+    karmaParseConfig = require('karma/lib/config').parseConfig,
+    path = require('path');
 
 const client_src = './client_src';
 
@@ -25,7 +28,22 @@ let libs = [
     'angular-ui-router'
 ];
 
-gulp.task('default', ['nodemon', 'browser-sync', 'build:libs', 'build:js', 'watch:html']);
+gulp.task('default', ['test', 'nodemon', 'browser-sync', 'build:libs', 'build:js', 'watch:html']);
+
+// gulp.task('test', function(){
+//     return gulp.src(['./client_src/**/*_spec.js'])
+//         .pipe(jasmine());
+// });
+
+gulp.task('test', function (done) {
+  var configFile = path.resolve(__dirname + '/karma.conf.js');
+  var resultOptions = karmaParseConfig(configFile, {
+    browsers: ['PhantomJS'],
+    singleRun: true
+  });
+
+  new KarmaServer(resultOptions, done).start();
+});
 
 gulp.task( 'watch:html', ['copy:html'], function() {
     return watch(client_src + '/index.html', { ignoreInitial: false })
