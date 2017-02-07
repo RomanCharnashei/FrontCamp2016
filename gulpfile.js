@@ -30,11 +30,6 @@ let libs = [
 
 gulp.task('default', ['test', 'nodemon', 'browser-sync', 'build:libs', 'build:js', 'watch:html']);
 
-// gulp.task('test', function(){
-//     return gulp.src(['./client_src/**/*_spec.js'])
-//         .pipe(jasmine());
-// });
-
 gulp.task('test', function (done) {
   var configFile = path.resolve(__dirname + '/karma.conf.js');
   var resultOptions = karmaParseConfig(configFile, {

@@ -18,7 +18,8 @@ module.exports = function(config) {
       'node_modules/angular/angular.min.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/jasmine-sinon/lib/jasmine-sinon.js',
-      'client_src/**/*_spec.js'
+      'client_src/**/*_spec.js',
+      'client_src/app.js'
     ],
 
 
@@ -30,13 +31,20 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'client_src/**/*_spec.js': [ 'browserify' ]
+      'client_src/**/*_spec.js': ['browserify'],
+      'client_src/app.js': ['browserify']
     },
 
 
 
     browserify: {
-      transform: [ ['stringify', {'includeExtensions': ['.html']}]]
+
+      transform: [
+          ['stringify', { includeExtensions: ['.html'] }], 
+          'browserify-ngannotate', 
+          ['browserify-conditionalify', { definitions: { isNotTesting: false } }]
+        ]
+
     },
 
     // test results reporter to use

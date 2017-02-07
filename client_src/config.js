@@ -6,8 +6,14 @@ module.exports = /*@ngInject*/ function($stateProvider, $urlRouterProvider) {
             url: '/',
             component: 'priviewArticles',
             resolve: {
-                articles: /*@ngInject*/ function(articleSvc){
-                    return articleSvc.list();
+                articles: /*@ngInject*/ function(articleSvc, $q){
+
+                    //#if isNotTesting
+                        return articleSvc.list();
+                    //#else
+                        return $q.when([]);                
+                    //#endif
+                    
                 }
             }
         })
