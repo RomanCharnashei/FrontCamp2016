@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     buffer = require('vinyl-buffer'),
     source = require('vinyl-source-stream'),
-    ngAnnotate = require('gulp-ng-annotate'),
+    ngAnnotate = require('browserify-ngannotate'),
     uglify = require('gulp-uglify'),
     watchify = require('watchify'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -75,10 +75,11 @@ gulp.task('build:js', function(){
         debug: true,
         entries: ['app.js']
     })
-    .transform(stringify, {
-      appliesTo: { includeExtensions: ['.html'] },
-      minify: true
-    });
+        .transform(ngAnnotate)
+        .transform(stringify, {
+          appliesTo: { includeExtensions: ['.html'] },
+          minify: true
+        });
 
     libs.forEach(function(lib) {
         b.external(lib);
@@ -95,8 +96,7 @@ gulp.task('build:js', function(){
             .bundle()            
             .pipe(source('bundle.js'))                     
             .pipe(buffer())
-            .pipe(sourcemaps.init({loadMaps: true}))
-            .pipe(ngAnnotate())            
+            .pipe(sourcemaps.init({loadMaps: true}))          
             .pipe(uglify())            
             .pipe(sourcemaps.write('./maps'))
             .pipe(gulp.dest(client_js_dest));

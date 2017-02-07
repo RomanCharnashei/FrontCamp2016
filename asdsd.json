@@ -1,0 +1,107 @@
+[
+    {
+        "_id": "585eb5ec48fd8416040fea42",
+        "title": "Politics",
+        "preview": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil qui, earum adipisci culpa consectetur hic necessitatibus tenetur quod itaque vel voluptatum at, recusandae rerum, quaerat sint dignissimos totam minima ipsam quibusdam. Quos dolorum, facere autem officia perferendis culpa. Iusto nemo vitae ullam sunt magni corporis eveniet, magnam, et culpa obcaecati.",
+        "pubDate": "2016-12-24T17:52:44.438Z",
+        "_user": {
+            "_id": "585eb5ec48fd8416040fea41",
+            "name": "Роман Черношей",
+            "vk_id": "6477085",
+            "vk_profile": "http://vk.com/id6477085",
+            "photo_uri": "https://pp.vk.me/c417816/v417816085/d8b6/ILq82lXS49w.jpg",
+            "created": "2016-12-24T17:52:44.438Z",
+            "__v": 0
+        }
+    },
+    {
+        "_id": "585eb5ec48fd8416040fea43",
+        "title": "Economy",
+        "preview": "Test Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil qui, earum adipisci culpa consectetur hic necessitatibus tenetur quod itaque vel voluptatum at, recusandae rerum, quaerat sint dignissimos totam minima ipsam quibusdam. Quos dolorum, facere autem officia perferendis culpa. Iusto nemo vitae ullam sunt magni corporis eveniet, magnam, et culpa obcaecati.",
+        "pubDate": "2016-12-24T17:52:44.438Z",
+        "_user": {
+            "_id": "585eb5ec48fd8416040fea41",
+            "name": "Роман Черношей",
+            "vk_id": "6477085",
+            "vk_profile": "http://vk.com/id6477085",
+            "photo_uri": "https://pp.vk.me/c417816/v417816085/d8b6/ILq82lXS49w.jpg",
+            "created": "2016-12-24T17:52:44.438Z",
+            "__v": 0
+        }
+    },
+    {
+        "_id": "585eb5ec48fd8416040fea44",
+        "title": "Sports",
+        "preview": "Test Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil qui, earum adipisci culpa consectetur hic necessitatibus tenetur quod itaque vel voluptatum at, recusandae rerum, quaerat sint dignissimos totam minima ipsam quibusdam. Quos dolorum, facere autem officia perferendis culpa. Iusto nemo vitae ullam sunt magni corporis eveniet, magnam, et culpa obcaecati.",
+        "pubDate": "2016-12-24T17:52:44.438Z",
+        "_user": {
+            "_id": "585eb5ec48fd8416040fea41",
+            "name": "Роман Черношей",
+            "vk_id": "6477085",
+            "vk_profile": "http://vk.com/id6477085",
+            "photo_uri": "https://pp.vk.me/c417816/v417816085/d8b6/ILq82lXS49w.jpg",
+            "created": "2016-12-24T17:52:44.438Z",
+            "__v": 0
+        }
+    },
+    {
+        "_id": "588fa8d6c8fb9810b8836b2c",
+        "pubDate": "2017-01-30T20:57:58.281Z",
+        "_user": {
+            "_id": "585eb5ec48fd8416040fea41",
+            "name": "Роман Черношей",
+            "vk_id": "6477085",
+            "vk_profile": "http://vk.com/id6477085",
+            "photo_uri": "https://pp.vk.me/c417816/v417816085/d8b6/ILq82lXS49w.jpg",
+            "created": "2016-12-24T17:52:44.438Z",
+            "__v": 0
+        },
+        "preview": "",
+        "title": "erwer"
+    },
+    {
+        "_id": "588faf89c8fb9810b8836b2e",
+        "pubDate": "2017-01-30T21:26:33.528Z",
+        "_user": {
+            "_id": "585eb5ec48fd8416040fea41",
+            "name": "Роман Черношей",
+            "vk_id": "6477085",
+            "vk_profile": "http://vk.com/id6477085",
+            "photo_uri": "https://pp.vk.me/c417816/v417816085/d8b6/ILq82lXS49w.jpg",
+            "created": "2016-12-24T17:52:44.438Z",
+            "__v": 0
+        },
+        "preview": "Рома тест",
+        "title": "Рома тест"
+    },
+    {
+        "_id": "585eb5ec48fd8416040fea45",
+        "title": "Art",
+        "preview": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil qui, earum adipisci culpa consectetur hic necessitatibus tenetur quod itaque vel voluptatum at, recusandae rerum, quaerat sint dignissimos totam minima ipsam quibusdam. Quos dolorum, facere autem officia perferendis culpa. Iusto nemo vitae ullam sunt magni corporis eveniet, magnam, et culpa obcaecati.",
+        "pubDate": "2016-12-24T17:52:44.438Z",
+        "_user": {
+            "_id": "585eb5ec48fd8416040fea41",
+            "name": "Роман Черношей",
+            "vk_id": "6477085",
+            "vk_profile": "http://vk.com/id6477085",
+            "photo_uri": "https://pp.vk.me/c417816/v417816085/d8b6/ILq82lXS49w.jpg",
+            "created": "2016-12-24T17:52:44.438Z",
+            "__v": 0
+        }
+    },
+    {
+        "_id": "585eb5ec48fd8416040fea46",
+        "title": "Entertainment",
+        "preview": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil qui, earum adipisci culpa consectetur hic necessitatibus tenetur quod itaque vel voluptatum at, recusandae rerum, quaerat sint dignissimos totam minima ipsam quibusdam. Quos dolorum, facere autem officia perferendis culpa. Iusto nemo vitae ullam sunt magni corporis eveniet, magnam, et culpa obcaecati.",
+        "pubDate": "2016-12-24T17:52:44.438Z",
+        "_user": {
+            "_id": "585eb5ec48fd8416040fea41",
+            "name": "Роман Черношей",
+            "vk_id": "6477085",
+            "vk_profile": "http://vk.com/id6477085",
+            "photo_uri": "https://pp.vk.me/c417816/v417816085/d8b6/ILq82lXS49w.jpg",
+            "created": "2016-12-24T17:52:44.438Z",
+            "__v": 0
+        }
+    }
+]
