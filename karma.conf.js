@@ -33,7 +33,8 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'client_src/**/*_spec.js': ['browserify'],
-      'client_src/app.js': ['browserify']
+      'client_src/app.js': ['browserify'],
+      'client_src/**/!(*_spec).js': ['coverage']
     },
 
 
@@ -51,7 +52,12 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
+
+    coverageReporter: {
+      type: 'html',
+      dir: 'client_src/coverage/'
+    },
 
 
     // web server port
