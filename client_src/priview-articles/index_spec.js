@@ -1,5 +1,5 @@
 describe("blog:priview-articles", function() {
-	var element, parentScope, userProfileSvc;
+	var element, parentScope, userProfileSvc, controller, articles;
 
 
     beforeEach(angular.mock.module('blog'));
@@ -18,12 +18,14 @@ describe("blog:priview-articles", function() {
 				});
 
 			});
+
+			
 		});
 	});
 
     beforeEach(inject(function($rootScope, $compile){
 
-		var articles = [{
+		articles = [{
 			_id: "585eb5ec48fd8416040fea42",
 			title: "Politics",
 			preview: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil qui, earum adipisci culpa consectetur hic necessitatibus tenetur quod itaque vel voluptatum at, recusandae rerum, quaerat sint dignissimos totam minima ipsam quibusdam. Quos dolorum, facere autem officia perferendis culpa. Iusto nemo vitae ullam sunt magni corporis eveniet, magnam, et culpa obcaecati.",
@@ -51,17 +53,18 @@ describe("blog:priview-articles", function() {
 					created: "2016-12-24T17:52:44.438Z",
 					__v: 0
 				}
-			}];
+		}];
 		
 		parentScope = $rootScope.$new();
-		parentScope.articles = articles;
 		element = angular.element("<priview-articles></priview-articles>");
 		element = $compile(element)(parentScope);
+		controller = element.controller('priviewArticles');
+		controller.articles = articles;
 		parentScope.$digest();
     }));
 
-	it("should be link", function () {
+	it("should be expected amount of articles", function () {
 
-		expect(true).toBe(true);
+		expect(findInAll(element, '.article-priview').length).toBe(articles.length);
 	});
 });

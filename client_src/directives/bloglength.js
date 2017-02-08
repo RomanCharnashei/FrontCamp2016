@@ -8,7 +8,7 @@ module.exports = /*@ngInject*/ function($parse){
                 var length = $parse(attrs.blogLength)(scope);
                 length = parseInt(length);
 
-                if (isNaN(length) || (modelValue.length >= length)) {
+                if (isNaN(length) || (modelValue && modelValue.length >= length)) {
                     return true
                 } else {
                     return false;
